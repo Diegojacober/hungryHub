@@ -1,0 +1,10 @@
+spring:
+    security:
+        ignored: "/actuator/**"
+
+keycloak:
+    url: http://localhost:8181
+    realm: test
+    jwk: ${keycloak.url}/realms/${keycloak.realm}/protocol/openid-connect/certs
+server:
+    port: 8081
