@@ -36,7 +36,7 @@ public class AccessToken {
         JsonObject payloadAsJson = decodeTokenPayloadToJsonObject(decodedJWT);
 
        return StreamSupport.stream(
-                payloadAsJson.getAsJsonObject("realm_access").getAsJsonArray("roles").spliterator(), false)
+                payloadAsJson.getAsJsonArray("roles").spliterator(), false)
                 .map(JsonElement::getAsString)
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());

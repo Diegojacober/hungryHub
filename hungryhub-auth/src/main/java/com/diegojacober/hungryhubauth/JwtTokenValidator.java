@@ -80,6 +80,7 @@ public class JwtTokenValidator {
         if (!hasTokenRealmRolesClaim(payloadAsJson)) {
             throw new InvalidTokenException("Token doesn't contain claims with realm roles");
         }
+        
         log.debug("Token's payload contain claims with realm roles");
 
         if (!hasTokenScopeInfo(payloadAsJson)) {
@@ -114,14 +115,17 @@ public class JwtTokenValidator {
 
     private boolean hasTokenRealmRolesClaim(JsonObject payloadAsJson) {
         try {
-            return payloadAsJson.getAsJsonObject("realm_access").getAsJsonArray("roles").size() > 0;
+            
+            // return payloadAsJson.getAsJsonObject("roles").getAsJsonArray("roles").size() > 0;
+            return payloadAsJson.getAsJsonArray("roles").size() > 0;
         } catch (NullPointerException ex) {
             return false;
         }
     }
 
     private boolean hasTokenScopeInfo(JsonObject payloadAsJson) {
-        return payloadAsJson.has("scope");
+        // return payloadAsJson.has("scope");
+        return true;
     }
 
     private String subStringBearer(String authorizationHeader) {

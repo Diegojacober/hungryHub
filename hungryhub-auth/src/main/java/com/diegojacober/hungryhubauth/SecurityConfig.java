@@ -34,7 +34,7 @@ public class SecurityConfig {
     @Value("${spring.security.ignored}")
     private String nonSecureUrl;
 
-    @Value("${keycloak.jwk}")
+    @Value("${entraid.jwk}")
     private String jwkProviderUrl;
 
     @Bean
@@ -48,7 +48,7 @@ public class SecurityConfig {
                 .httpBasic(withDefaults())
                 .addFilterBefore(
                         new AccessTokenFilter(
-                                jwtTokenValidator(keycloakJwkProvider()),
+                                jwtTokenValidator(entradIdJwkProvider()),
                                 authenticationManager(authenticationConfiguration),
                                 authenticationFailureHandler()),
                         BasicAuthenticationFilter.class);
@@ -92,5 +92,8 @@ public class SecurityConfig {
         return new KeycloakJwkProvider(jwkProviderUrl);
     }
 
-    
+    @Bean
+    public JwkProvider entradIdJwkProvider() {
+        return new EntraIdJwkProvider(jwkProviderUrl);
+    }
 }

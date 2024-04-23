@@ -21,7 +21,7 @@ public class MovieController {
     }
 
     @GetMapping("/movies")
-    @AllowedRoles("admin")
+    // @AllowedRoles("admin")
     public List<Movie> getAllMovies(){
         return new ArrayList<>(movies.values());
     }
