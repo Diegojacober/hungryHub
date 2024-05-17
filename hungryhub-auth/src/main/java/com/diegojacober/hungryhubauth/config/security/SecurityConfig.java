@@ -1,10 +1,8 @@
-package com.diegojacober.hungryhubauth;
+package com.diegojacober.hungryhubauth.config.security;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -22,6 +20,11 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 import com.auth0.jwk.JwkProvider;
+import com.diegojacober.hungryhubauth.config.security.AccessToken.AccessTokenAuthenticationFailureHandler;
+import com.diegojacober.hungryhubauth.config.security.AccessToken.AccessTokenFilter;
+import com.diegojacober.hungryhubauth.facades.providers.EntraIdJwkProvider;
+import com.diegojacober.hungryhubauth.facades.providers.KeycloakAuthenticationProvider;
+import com.diegojacober.hungryhubauth.facades.providers.KeycloakJwkProvider;
 
 import lombok.RequiredArgsConstructor;
 
@@ -34,7 +37,7 @@ public class SecurityConfig {
     @Value("${spring.security.ignored}")
     private String nonSecureUrl;
 
-    @Value("${entraid.jwk}")
+    @Value("${keycloak.jwk}")
     private String jwkProviderUrl;
 
     @Bean

@@ -1,4 +1,4 @@
-package com.diegojacober.hungryhubauth;
+package com.diegojacober.hungryhubauth.config.security.AccessToken;
 
 import java.io.IOException;
 import java.time.Instant;
@@ -14,7 +14,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-class AccessTokenAuthenticationFailureHandler implements AuthenticationFailureHandler {
+public class AccessTokenAuthenticationFailureHandler implements AuthenticationFailureHandler {
     
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,

@@ -1,4 +1,4 @@
-package com.diegojacober.hungryhubauth;
+package com.diegojacober.hungryhubauth.config.security.AccessToken;
 
 import java.util.Base64;
 import java.util.Collection;

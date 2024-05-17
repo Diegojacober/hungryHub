@@ -1,4 +1,4 @@
-package com.diegojacober.hungryhubauth;
+package com.diegojacober.hungryhubauth.facades.providers;
 
 import java.io.IOException;
 import java.net.URI;

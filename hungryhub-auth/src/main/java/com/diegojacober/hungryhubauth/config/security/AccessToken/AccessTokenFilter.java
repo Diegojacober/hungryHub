@@ -1,4 +1,4 @@
-package com.diegojacober.hungryhubauth;
+package com.diegojacober.hungryhubauth.config.security.AccessToken;
 
 import java.io.IOException;
 
@@ -9,6 +9,8 @@ import org.springframework.security.web.authentication.AbstractAuthenticationPro
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.util.matcher.AnyRequestMatcher;
 
+import com.diegojacober.hungryhubauth.config.security.JwtAuthentication;
+import com.diegojacober.hungryhubauth.config.security.JwtTokenValidator;
 import com.diegojacober.hungryhubauth.exceptions.InvalidTokenException;
 
 import jakarta.servlet.FilterChain;
@@ -18,7 +20,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-class AccessTokenFilter extends AbstractAuthenticationProcessingFilter {
+public class AccessTokenFilter extends AbstractAuthenticationProcessingFilter {
 
 
    private final JwtTokenValidator tokenVerifier;

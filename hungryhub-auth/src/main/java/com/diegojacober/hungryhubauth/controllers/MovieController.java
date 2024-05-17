@@ -1,4 +1,4 @@
-package com.diegojacober.hungryhubauth;
+package com.diegojacober.hungryhubauth.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,9 @@ import java.util.Map;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.diegojacober.hungryhubauth.config.security.AccessToken.AllowedRoles;
+import com.diegojacober.hungryhubauth.entities.Movie;
 
 @RestController
 public class MovieController {

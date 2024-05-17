@@ -1,6 +1,8 @@
-package com.diegojacober.hungryhubauth;
+package com.diegojacober.hungryhubauth.config.security;
 
 import org.springframework.security.authentication.AbstractAuthenticationToken;
+
+import com.diegojacober.hungryhubauth.config.security.AccessToken.AccessToken;
 
 public class JwtAuthentication extends AbstractAuthenticationToken {
 

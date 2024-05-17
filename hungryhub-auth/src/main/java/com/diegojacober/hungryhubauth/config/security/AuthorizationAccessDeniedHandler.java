@@ -1,4 +1,4 @@
-package com.diegojacober.hungryhubauth;
+package com.diegojacober.hungryhubauth.config.security;
 
 import java.io.IOException;
 import java.time.Instant;

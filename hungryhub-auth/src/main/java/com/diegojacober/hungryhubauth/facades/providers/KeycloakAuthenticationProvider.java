@@ -1,9 +1,11 @@
-package com.diegojacober.hungryhubauth;
+package com.diegojacober.hungryhubauth.facades.providers;
 
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.core.Authentication;
 
-class KeycloakAuthenticationProvider implements AuthenticationProvider {
+import com.diegojacober.hungryhubauth.config.security.JwtAuthentication;
+
+public class KeycloakAuthenticationProvider implements AuthenticationProvider {
 
     @Override
     public Authentication authenticate(Authentication authentication) {

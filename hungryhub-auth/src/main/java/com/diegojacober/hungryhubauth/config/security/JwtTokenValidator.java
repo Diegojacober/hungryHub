@@ -1,4 +1,4 @@
-package com.diegojacober.hungryhubauth;
+package com.diegojacober.hungryhubauth.config.security;
 
 import static java.util.Objects.isNull;
 
@@ -14,6 +14,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.SignatureVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.diegojacober.hungryhubauth.config.security.AccessToken.AccessToken;
 import com.diegojacober.hungryhubauth.exceptions.InvalidTokenException;
 import com.google.common.base.Preconditions;
 import com.google.gson.Gson;

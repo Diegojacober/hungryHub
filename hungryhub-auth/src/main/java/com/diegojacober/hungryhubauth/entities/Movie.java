@@ -1,4 +1,4 @@
-package com.diegojacober.hungryhubauth;
+package com.diegojacober.hungryhubauth.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
